@@ -12,11 +12,9 @@ export default class App extends Vue {}
 
 <template>
     <AppContainer>
-        <transition name="fade">
-            <keep-alive :include="/Home/">
-                <router-view />
-            </keep-alive>
-        </transition>
+        <keep-alive :include="/Home/">
+            <router-view />
+        </keep-alive>
     </AppContainer>
 </template>
 

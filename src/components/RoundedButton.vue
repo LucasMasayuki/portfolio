@@ -1,14 +1,23 @@
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["onClick"] }] */
+
+import {
+    Component, Prop, Vue, Emit,
+} from 'vue-property-decorator';
 
 @Component
 export default class RoundedButton extends Vue {
     @Prop() public text?: string;
+
+    @Emit('click')
+    public onClick(e: Event) {
+        return e;
+    }
 }
 </script>
 
 <template>
-    <button class="rounded-button">{{text}}</button>
+    <button class="rounded-button" @click="onClick">{{text}}</button>
 </template>
 
 <style lang="scss" scoped>

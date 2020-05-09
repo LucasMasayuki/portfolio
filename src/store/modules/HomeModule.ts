@@ -15,6 +15,6 @@ export default class HomeModule extends VuexModule {
     public initLoading(): void {
         setTimeout(() => {
             this.context.commit('setLoading', false);
-        }, 5000);
+        }, 15000);
     }
 }

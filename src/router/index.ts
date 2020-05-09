@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import ContactMe from '../views/ContactMe.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,11 @@ const routes: RouteConfig[] = [
         path: '/',
         name: 'Home',
         component: Home,
+    },
+    {
+        path: '/contactMe',
+        name: 'ContactMe',
+        component: ContactMe,
     },
     {
         path: '/about',
