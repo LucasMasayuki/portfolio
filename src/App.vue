@@ -1,21 +1,16 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import AppContainer from '@/components/AppContainer.vue';
 
-@Component({
-    components: {
-        AppContainer,
-    },
-})
+@Component({})
 export default class App extends Vue {}
 </script>
 
 <template>
-    <AppContainer>
-        <keep-alive :include="/Home/">
+    <transition name="fade">
+        <keep-alive :include="/Main/">
             <router-view />
         </keep-alive>
-    </AppContainer>
+    </transition>
 </template>
 
 <style lang="scss">

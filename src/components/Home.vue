@@ -3,6 +3,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import ProfileLogo from '@/components/ProfileLogo.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import TypeWritterTitle from '@/components/TypeWritterTitle.vue';
+import HiddenOverflowContainer from '@/components/HiddenOverflowContainer.vue';
 
 @Component({
     name: 'Home',
@@ -10,6 +11,7 @@ import TypeWritterTitle from '@/components/TypeWritterTitle.vue';
         ProfileLogo,
         RoundedButton,
         TypeWritterTitle,
+        HiddenOverflowContainer,
     },
 })
 export default class Home extends Vue {
@@ -17,7 +19,7 @@ export default class Home extends Vue {
         return this.$store.state.home.isLoading;
     }
 
-    public initLoading() {
+    public mounted() {
         this.$store.dispatch('home/initLoading');
     }
 
@@ -28,40 +30,28 @@ export default class Home extends Vue {
 </script>
 
 <template>
-    <div class="main-container">
-        <transition name="fade" v-on:before-enter="initLoading" appear>
+    <div class="home-container">
+        <transition name="fade" mode="out-in">
             <div v-if="isLoading">
                 <TypeWritterTitle
                     title="Nothing is impossible having an idea, a computer and a cup of coffee"
                     typingSpeed="100"
                 />
             </div>
-            <div v-else>
+            <div v-if="!isLoading">
                 <ProfileLogo />
                 <h1>Hi, I'm Lucas,</h1>
                 <h2>a full stack developer, and freelancer software engineer.</h2>
-                <div class="grid-button-group">
-                    <RoundedButton text="Contact me" @click="onClickGoToContactMe" />
-                    <RoundedButton text="See my skils" />
-                    <RoundedButton text="See my profile" />
-                </div>
             </div>
         </transition>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.main-container {
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    height: 100%;
+.home-container {
     margin: 0 10%;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 h1 {
     font-size: 30px;
@@ -75,15 +65,11 @@ h2 {
 }
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity 1s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
-}
-.grid-button-group {
-    display: grid;
-    grid-gap: 1%;
-    grid-template-columns: auto auto auto;
-    width: 100%;
 }
 </style>

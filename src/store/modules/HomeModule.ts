@@ -12,9 +12,8 @@ export default class HomeModule extends VuexModule {
     }
 
     @Action
-    public initLoading(): void {
-        setTimeout(() => {
-            this.context.commit('setLoading', false);
-        }, 15000);
+    public async initLoading(): Promise<void> {
+        await new Promise((resolve) => setTimeout(resolve, 1300));
+        this.context.commit('setLoading', false);
     }
 }

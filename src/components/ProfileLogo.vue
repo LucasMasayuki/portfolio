@@ -7,7 +7,7 @@ export default class ProfileLogo extends Vue {}
 
 <template>
     <div class="profile-logo">
-        <img class="profile-img" src="../assets/profile.jpg" />
+        <img class="profile-img" src="../assets/imgs/profile.jpg" />
     </div>
 </template>
 
