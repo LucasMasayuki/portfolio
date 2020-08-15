@@ -22,10 +22,6 @@ export default class Home extends Vue {
     public mounted() {
         this.$store.dispatch('home/initLoading');
     }
-
-    public onClickGoToContactMe() {
-        this.$router.push('/contact-me');
-    }
 }
 </script>
 

@@ -1,17 +1,19 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Constants from '../shared/Constants';
 
 @Component
 export default class TypeWritterTitle extends Vue {
     @Prop({ default: '' }) public title!: string;
 
-    @Prop({ default: 200 }) public typingSpeed!: number;
+    @Prop({ default: Constants.DEFAULT_TYPING_SPEED })
+    public typingSpeed!: number;
 
-    @Prop({ default: 2000 }) public textDelay!: number;
-
-    public currentIndex = 0;
+    @Prop({ default: Constants.DEFAULT_TEXT_DELAY }) public textDelay!: number;
 
     public currentTypedText = '';
+
+    public currentIndex = 0;
 
     public mounted() {
         setTimeout(this.typeText, this.textDelay + 200);
