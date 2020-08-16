@@ -1,5 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import Home from '@/components/Home.vue';
+import Constants from '@/shared/Constants';
 import Vuex, { Store } from 'vuex';
 
 const localVue = createLocalVue();
@@ -30,7 +31,7 @@ describe('Home.vue', () => {
         actions = {
             initLoading: jest.fn(async () => {
                 await sleep(sleepTime);
-                store.commit('home/setLoading')
+                store.commit('home/setLoading');
             }),
         };
 
@@ -44,6 +45,12 @@ describe('Home.vue', () => {
                     state,
                     mutations,
                     actions,
+                },
+                main: {
+                    namespaced: true,
+                    state: {
+                        screen: Constants.SCREEN.home,
+                    },
                 },
             },
         });

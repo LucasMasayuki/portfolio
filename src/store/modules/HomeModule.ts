@@ -1,7 +1,6 @@
 import {
     VuexModule, Module, Action, Mutation,
 } from 'vuex-module-decorators';
-import Constants from '@/shared/Constants';
 
 @Module({ namespaced: true })
 export default class HomeModule extends VuexModule {
@@ -13,8 +12,8 @@ export default class HomeModule extends VuexModule {
     }
 
     @Action
-    public async initLoading(): Promise<void> {
-        await new Promise((resolve) => setTimeout(resolve, Constants.TYPING_TIME));
+    public async initLoading(typingTime: number): Promise<void> {
+        await new Promise((resolve) => setTimeout(resolve, typingTime));
         this.context.commit('setLoading', false);
     }
 }

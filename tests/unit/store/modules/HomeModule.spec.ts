@@ -10,7 +10,8 @@ describe('HomeModule loading', () => {
 
     describe('when enter on home page', () => {
         it('should change is loading', async () => {
-            await store.dispatch('home/initLoading');
+            const typingTime = 1;
+            await store.dispatch('home/initLoading', typingTime);
 
             expect(store.state.home.isLoading).toBeFalsy();
         });

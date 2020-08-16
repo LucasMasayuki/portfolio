@@ -1,8 +1,7 @@
 <script lang="ts">
-import { getModule } from 'vuex-module-decorators';
 import { Component, Vue } from 'vue-property-decorator';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import CircularMenuModule from '../store/modules/CircularMenuModule';
+import NodeEntity from '../models/NodeEntity';
 import moveTo from '../shared/Constants';
 
 @Component({
@@ -12,26 +11,20 @@ import moveTo from '../shared/Constants';
     },
 })
 export default class CircularMenu extends Vue {
-    private circularMenuModule = getModule(CircularMenuModule, this.$store);
-
-    get currentNodes(): any[] {
-        return this.circularMenuModule.currentNodes;
+    get currentNodes(): NodeEntity[] {
+        return this.$store.state.circularMenu.currentNodes;
     }
 
     get btnIcon(): string[] {
-        return this.circularMenuModule.btnIcon;
+        return this.$store.state.circularMenu.btnIcon;
     }
 
     get isOpenedMenu(): boolean {
-        return this.circularMenuModule.isOpenedMenu;
+        return this.$store.state.circularMenu.isOpenedMenu;
     }
 
     public beforeMount(): void {
-        const circularMenuModule = getModule(CircularMenuModule, this.$store);
-
-        const EMPTY_CALLBACK = (): void => {
-            console.log('do nothing');
-        };
+        const EMPTY_CALLBACK = (): boolean => true;
 
         const iconClickCallback = [
             this.onClickPrevIcon,
@@ -40,22 +33,25 @@ export default class CircularMenu extends Vue {
         ];
 
         iconClickCallback.forEach((callback) => {
-            circularMenuModule.setIconClickCallback(callback);
+            this.$store.commit('circularMenu/setIconClickCallback', callback);
         });
 
-        circularMenuModule.insertNodes();
+        this.$store.dispatch('circularMenu/insertNodes');
     }
 
     public onClickPrevIcon() {
-        this.circularMenuModule.moveCircularListNodes(moveTo.PREVIOUS);
+        this.$store.dispatch(
+            'circularMenu/moveCircularListNodes',
+            moveTo.PREVIOUS,
+        );
     }
 
     public onClickNextIcon() {
-        this.circularMenuModule.moveCircularListNodes(moveTo.NEXT);
+        this.$store.dispatch('circularMenu/moveCircularListNodes', moveTo.NEXT);
     }
 
     public onClickMenuBtn() {
-        this.circularMenuModule.onClickMenuBtn();
+        this.$store.dispatch('circularMenu/onClickMenuBtn');
     }
 }
 </script>

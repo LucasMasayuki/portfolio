@@ -3,6 +3,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import HiddenOverflowContainer from '@/components/HiddenOverflowContainer.vue';
 import Home from '@/components/Home.vue';
 import CircularMenu from '@/components/CircularMenu.vue';
+import Constants from '@/shared/Constants';
 
 @Component({
     name: 'Main',
@@ -13,25 +14,21 @@ import CircularMenu from '@/components/CircularMenu.vue';
     },
 })
 export default class Main extends Vue {
-    get currentScreen(): string {
-        return this.$store.state.main.screen;
-    }
-
     get isNotLoading(): boolean {
         return !this.$store.state.home.isLoading;
     }
 
     get isHomeScreen(): boolean {
-        return this.$store.state.main.screen === 'home';
+        return this.$store.state.main.screen === Constants.SCREEN.home;
     }
 }
 </script>
 
 <template>
     <div>
-        <HiddenOverflowContainer :screen="currentScreen">
+        <transition name="fade">
             <Home v-if="isHomeScreen" />
-        </HiddenOverflowContainer>
+        </transition>
         <CircularMenu v-if="isNotLoading" />
     </div>
 </template>

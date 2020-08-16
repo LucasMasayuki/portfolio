@@ -4,6 +4,7 @@ import ProfileLogo from '@/components/ProfileLogo.vue';
 import RoundedButton from '@/components/RoundedButton.vue';
 import TypeWritterTitle from '@/components/TypeWritterTitle.vue';
 import HiddenOverflowContainer from '@/components/HiddenOverflowContainer.vue';
+import Constants from '@/shared/Constants';
 
 @Component({
     name: 'Home',
@@ -15,32 +16,38 @@ import HiddenOverflowContainer from '@/components/HiddenOverflowContainer.vue';
     },
 })
 export default class Home extends Vue {
+    get screen(): string {
+        return this.$store.state.main.screen;
+    }
+
     get isLoading(): boolean {
         return this.$store.state.home.isLoading;
     }
 
     public mounted() {
-        this.$store.dispatch('home/initLoading');
+        this.$store.dispatch('home/initLoading', Constants.TYPING_TIME);
     }
 }
 </script>
 
 <template>
-    <div class="home-container">
-        <transition name="fade" mode="out-in">
-            <div v-if="isLoading">
-                <TypeWritterTitle
-                    title="Nothing is impossible having an idea, a computer and a cup of coffee"
-                    typingSpeed="100"
-                />
-            </div>
-            <div v-if="!isLoading">
-                <ProfileLogo />
-                <h1>Hi, I'm Lucas,</h1>
-                <h2>a full stack developer, and freelancer software engineer.</h2>
-            </div>
-        </transition>
-    </div>
+    <HiddenOverflowContainer :screen="screen">
+        <div class="home-container">
+            <transition name="fade" mode="out-in">
+                <div v-if="isLoading">
+                    <TypeWritterTitle
+                        title="Nothing is impossible having an idea, a computer and a cup of coffee"
+                        typingSpeed="100"
+                    />
+                </div>
+                <div v-if="!isLoading">
+                    <ProfileLogo />
+                    <h1>Hi, I'm Lucas,</h1>
+                    <h2>a full stack developer, and freelancer software engineer.</h2>
+                </div>
+            </transition>
+        </div>
+    </HiddenOverflowContainer>
 </template>
 
 <style lang="scss" scoped>
