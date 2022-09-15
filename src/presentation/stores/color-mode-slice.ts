@@ -11,7 +11,7 @@ export type ColorModeState = {
 };
 
 const initialState: ColorModeState = {
-  colorMode: getCurrentColorMode() ?? ColorModes.LIGHT,
+  colorMode: getCurrentColorMode() ?? ColorModes.DARK,
 };
 
 export const colorModeSlice: Slice<ColorModeState> = createSlice({

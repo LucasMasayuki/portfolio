@@ -4,8 +4,8 @@ import { Avatar, AvatarProps } from '@mui/material';
 type Props = {
   name: string;
   picture?: string;
-  height?: number;
-  width?: number;
+  height?: number | { xs: number; md: number };
+  width?: number | { xs: number; md: number };
 };
 
 const PhotoAvatar: React.FC<Props> = ({ name, picture, height, width }) => {

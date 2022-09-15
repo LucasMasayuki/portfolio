@@ -1,0 +1,78 @@
+.seamless-animated-text {
+  margin: 0;
+  color: white;
+  background: url('/program.jpg');
+  background-size: auto 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  from {
+    background-position: center 0;
+  }
+  to {
+    background-position: center 200%;
+  }
+}
+
+/* The laptop with borders */
+.laptop {
+  height: 100%;
+  width: 100%;
+}
+
+.laptop-frame {
+  background: #0d0d0d;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #e2e3e4;
+  height: 300px;
+  margin: 0 auto;
+  padding: 9px 9px 23px 9px;
+  position: relative;
+  width: 90%;
+}
+
+.laptop-frame:after {
+  background: linear-gradient(to bottom, lighten(#e2e3e4, 10%), #e2e3e4);
+  border-radius: 0 0 20px 20px;
+  bottom: 2px;
+  content: '';
+  height: 100%;
+  left: 2px;
+  position: absolute;
+  width: 90%;
+}
+
+.laptop-content {
+  border-radius: 20px;
+  height: 100%;
+}
+
+.laptop-body {
+  background: radial-gradient(circle at center, #e2e3e4 85%, #e2e3e4 100%);
+  border: solid darken(#e2e3e4, 25%);
+  border-radius: 2px 2px 12px 12px;
+  border-width: 1px 2px 0 2px;
+  box-shadow: inset 0 -2px 8px 0 darken(#e2e3e4, 35%);
+  height: 16px;
+  margin-top: -10px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+
+.laptop-body:after {
+  background: lighten(#e2e3e4, 10%);
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 0 4px 2px darken(#e2e3e4, 5%);
+  content: '';
+  height: 10px;
+  left: 50%;
+  margin-left: -60px;
+  position: absolute;
+  top: 0;
+  width: 120px;
+}

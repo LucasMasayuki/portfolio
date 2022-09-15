@@ -4,10 +4,10 @@ import {
   Box,
   Container,
   IconButton,
+  Tabs,
   Toolbar,
-  Typography,
 } from '@mui/material';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../src/presentation/app/hooks';
 import {
@@ -15,42 +15,62 @@ import {
   toogleColorMode,
 } from '../../src/presentation/stores/color-mode-slice';
 import { ColorModes } from '../../src/utils/constants';
-import AccountMenu from './menus/account-menu';
+import LinkTab from './link-tab';
+import SocialMediaIcon from './social-media-icon';
+import GithubIconSvg from './svgs/github-icon-svg';
+import LinkedinIconSvg from './svgs/linkedin-icon-svg';
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
-  const router = useRouter();
 
   const { colorMode } = useSelector(selectColorMode);
+
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
 
   return (
     <AppBar
       position="fixed"
       sx={{
         boxShadow: '0 2px 9px rgb(0 0 0 / 5%)',
+        alignContent: 'center',
       }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            color="primary"
-            sx={{ fontWeight: 'bold', cursor: 'pointer' }}
-            variant="h6"
-            onClick={() => {
-              router.push('/', undefined, { shallow: true });
-            }}
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="nav tabs example"
+            sx={{ color: colorMode === ColorModes.LIGHT ? '#121212' : 'unset' }}
           >
-            LOGO
-          </Typography>{' '}
+            <LinkTab label="Home" href="/home" />
+            <LinkTab label="Skills" href="/trash" />
+            <LinkTab label="Works" href="/spam" />
+            <LinkTab label="Portfolio" href="/spam" />
+          </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />
+          <SocialMediaIcon
+            socialMediaName="github"
+            href="https://github.com/LucasMasayuki"
+          >
+            <GithubIconSvg />
+          </SocialMediaIcon>
+          <SocialMediaIcon
+            socialMediaName="linkedin"
+            href="https://github.com/LucasMasayuki"
+          >
+            <LinkedinIconSvg />
+          </SocialMediaIcon>
           <IconButton
-            color="primary"
             sx={{ ml: 1 }}
             onClick={() => dispatch(toogleColorMode(null))}
           >
             {colorMode === ColorModes.DARK ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
-          <AccountMenu />
         </Toolbar>
       </Container>
     </AppBar>
