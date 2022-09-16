@@ -1,27 +1,17 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react';
-import PhotoAvatar from '../../base/photo-avatar';
 
 import Style from '../../../styles/banner.module.css';
 
 const Banner: React.FC = () => {
   return (
-    <Grid container alignItems="center" sx={{ p: 8, height: 'inherit' }}>
-      <Grid item xs={12} md={2}>
-        <PhotoAvatar
-          name="test"
-          height={{
-            xs: 64,
-            md: 164,
-          }}
-          width={{
-            xs: 64,
-            md: 164,
-          }}
-          picture="lucas.jpeg"
-        />
-      </Grid>
-      <Grid item xs={12} md={5}>
+    <Grid
+      container
+      alignItems="center"
+      sx={{ p: 8, height: 'inherit' }}
+      id="home-section"
+    >
+      <Grid item xs={12} md={7}>
         <Typography
           className={`${Style['seamless-animated-text']}`}
           variant="h2"

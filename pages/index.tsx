@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import GradientBackground from '../components/base/gradient-background';
 import Layout from '../components/base/layout';
+import AboutSection from '../components/pages/home/about-section';
 import Banner from '../components/pages/home/banner';
 
 const Home: NextPage = () => {
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <GradientBackground>
             <Banner />
           </GradientBackground>
+          <AboutSection />
         </>
       </Layout>
     </div>

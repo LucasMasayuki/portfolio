@@ -44,13 +44,16 @@ const Header: React.FC = () => {
           <Tabs
             value={value}
             onChange={handleChange}
+            indicatorColor={{
+              color: colorMode === ColorModes.LIGHT ? '#fff' : '#121212',
+            }}
             aria-label="nav tabs example"
             sx={{ color: colorMode === ColorModes.LIGHT ? '#121212' : 'unset' }}
           >
-            <LinkTab label="Home" href="/home" />
-            <LinkTab label="Skills" href="/trash" />
-            <LinkTab label="Works" href="/spam" />
-            <LinkTab label="Portfolio" href="/spam" />
+            <LinkTab label="Home" href="#home-section" />
+            <LinkTab label="About" href="#about-section" />
+            <LinkTab label="Works" href="#spam" />
+            <LinkTab label="Portfolio" href="#spam" />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />
           <SocialMediaIcon
