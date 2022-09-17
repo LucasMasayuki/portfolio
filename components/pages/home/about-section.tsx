@@ -77,6 +77,9 @@ const AboutSection: React.FC = () => {
         <Typography variant="h4" fontWeight="bold">
           Skills
         </Typography>
+        <Typography variant="h6" fontWeight="lighter">
+          skills I have ranked by experience level
+        </Typography>
       </Grid>
       <Grid item xs={12}>
         <SkillSetCard />

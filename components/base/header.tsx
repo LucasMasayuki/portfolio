@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           >
             <LinkTab label="Home" href="#home-section" />
             <LinkTab label="About" href="#about-section" />
-            <LinkTab label="Works" href="#spam" />
+            <LinkTab label="Experience" href="#experience" />
             <LinkTab label="Portfolio" href="#spam" />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />

@@ -18,6 +18,7 @@ import {
   SiDart,
   SiFlutter,
   SiJquery,
+  SiMysql,
   SiNextdotjs,
   SiNuxtdotjs,
   SiSass,
@@ -80,6 +81,24 @@ const SkillSetCard: React.FC = () => {
               </Grid>
               <Grid item xs={10}>
                 <Typography variant="subtitle1">Typescript</Typography>
+                <Rating value={5} readOnly />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Grid
+              container
+              item
+              xs={12}
+              alignItems="center"
+              textAlign="start"
+              p={0}
+            >
+              <Grid item xs={2}>
+                <SiMysql size={32} />
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="subtitle1">SQL</Typography>
                 <Rating value={5} readOnly />
               </Grid>
             </Grid>

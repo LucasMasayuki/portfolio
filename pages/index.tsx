@@ -4,6 +4,7 @@ import GradientBackground from '../components/base/gradient-background';
 import Layout from '../components/base/layout';
 import AboutSection from '../components/pages/home/about-section';
 import Banner from '../components/pages/home/banner';
+import ExperienceSection from '../components/pages/home/experience-section';
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
             <Banner />
           </GradientBackground>
           <AboutSection />
+          <ExperienceSection />
         </>
       </Layout>
     </div>
