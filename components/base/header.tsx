@@ -44,9 +44,6 @@ const Header: React.FC = () => {
           <Tabs
             value={value}
             onChange={handleChange}
-            indicatorColor={{
-              color: colorMode === ColorModes.LIGHT ? '#fff' : '#121212',
-            }}
             aria-label="nav tabs example"
             sx={{ color: colorMode === ColorModes.LIGHT ? '#121212' : 'unset' }}
           >

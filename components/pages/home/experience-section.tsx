@@ -150,7 +150,7 @@ const ExperienceSection: React.FC = () => {
                     React.js
                   </Typography>{' '}
                   on the frontend, as main tools and frameworks. In addition, I
-                  built every part of the application's graphical interface
+                  built every part of the {"application's"} graphical interface
                   using material ui library, with the best UI and UX practices.
                   I used{' '}
                   <Typography component="span" variant="h6" fontWeight="bold">

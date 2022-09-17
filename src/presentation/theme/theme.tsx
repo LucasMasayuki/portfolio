@@ -140,6 +140,15 @@ const appTheme = (mode: ColorModes): Theme =>
             },
           },
         },
+        MuiTabs: {
+          styleOverrides: {
+            root: {
+              '& .MuiTabs-indicator': {
+                display: 'none',
+              },
+            },
+          },
+        },
         MuiAppBar: {
           styleOverrides: {
             root: {
