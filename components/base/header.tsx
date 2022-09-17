@@ -1,4 +1,4 @@
-import { Brightness4, Brightness7 } from '@mui/icons-material';
+import { Brightness4, Brightness7, MenuOutlined } from '@mui/icons-material';
 import {
   AppBar,
   Box,
@@ -16,6 +16,7 @@ import {
 } from '../../src/presentation/stores/color-mode-slice';
 import { ColorModes } from '../../src/utils/constants';
 import LinkTab from './link-tab';
+import MenuDrawer from './MenuDrawer';
 import SocialMediaIcon from './social-media-icon';
 import GithubIconSvg from './svgs/github-icon-svg';
 import LinkedinIconSvg from './svgs/linkedin-icon-svg';
@@ -26,6 +27,7 @@ const Header: React.FC = () => {
   const { colorMode } = useSelector(selectColorMode);
 
   const [value, setValue] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -41,11 +43,28 @@ const Header: React.FC = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <IconButton
+            sx={{ display: { xs: 'block', md: 'none' } }}
+            onClick={() => {
+              setOpen(true);
+            }}
+          >
+            <MenuOutlined />
+          </IconButton>
+          <MenuDrawer
+            open={open}
+            handleClose={() => {
+              setOpen(false);
+            }}
+          />
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="nav tabs example"
-            sx={{ color: colorMode === ColorModes.LIGHT ? '#121212' : 'unset' }}
+            sx={{
+              color: colorMode === ColorModes.LIGHT ? '#121212' : 'unset',
+              display: { xs: 'none', md: 'block' },
+            }}
           >
             <LinkTab label="Home" href="#home-section" />
             <LinkTab label="About" href="#about-section" />
@@ -53,18 +72,31 @@ const Header: React.FC = () => {
             <LinkTab label="Portfolio" href="#spam" />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />
-          <SocialMediaIcon
-            socialMediaName="github"
-            href="https://github.com/LucasMasayuki"
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'block' },
+            }}
           >
-            <GithubIconSvg />
-          </SocialMediaIcon>
-          <SocialMediaIcon
-            socialMediaName="linkedin"
-            href="https://github.com/LucasMasayuki"
+            <SocialMediaIcon
+              socialMediaName="github"
+              href="https://github.com/LucasMasayuki"
+            >
+              <GithubIconSvg />
+            </SocialMediaIcon>
+          </Box>
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'block' },
+            }}
           >
-            <LinkedinIconSvg />
-          </SocialMediaIcon>
+            <SocialMediaIcon
+              socialMediaName="linkedin"
+              href="https://github.com/LucasMasayuki"
+            >
+              <LinkedinIconSvg />
+            </SocialMediaIcon>
+          </Box>
+
           <IconButton
             sx={{ ml: 1 }}
             onClick={() => dispatch(toogleColorMode(null))}

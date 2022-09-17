@@ -30,7 +30,13 @@ const ExperienceSection: React.FC = () => {
         <Card sx={{ height: '100%' }}>
           <CardContent sx={{ p: 2 }}>
             <Grid container alignItems="center">
-              <Grid item xs={4} textAlign="center">
+              <Grid
+                item
+                xs={12}
+                md={4}
+                textAlign="center"
+                mb={{ xs: 4, md: 0 }}
+              >
                 <Box
                   height={256}
                   width="100%"
@@ -53,7 +59,7 @@ const ExperienceSection: React.FC = () => {
                   Go to Delivery Direto
                 </Button>
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={12} md={8}>
                 <Typography variant="h4" fontWeight="bold">
                   Full stack web developer
                 </Typography>

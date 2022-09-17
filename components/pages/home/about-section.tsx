@@ -19,26 +19,27 @@ const AboutSection: React.FC = () => {
       </Grid>
       <Grid
         item
-        xs={4}
+        xs={12}
+        md={4}
         justifyContent="center"
-        pb={8}
+        pb={{ xs: 0, md: 8 }}
         pt={8}
         sx={{ display: 'inline-grid' }}
       >
         <PhotoAvatar
           name="test"
           height={{
-            xs: 64,
+            xs: 128,
             md: 164,
           }}
           width={{
-            xs: 64,
+            xs: 128,
             md: 164,
           }}
           picture="lucas.jpeg"
         />
       </Grid>
-      <Grid item xs={8} textAlign="center" pb={8} pt={8}>
+      <Grid item xs={12} md={8} textAlign="center" pb={8} pt={8}>
         <Typography variant="subtitle1">
           {"I've "}
           been working with web/mobile full stack development since 2017, where
@@ -52,21 +53,21 @@ const AboutSection: React.FC = () => {
           environments, mainly on the ETH network
         </Typography>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         <SkillCard
           title="Dynamic"
           description="I can handle the back end and front end efficiently, regardless of framework and language"
           icon={<RocketLaunchOutlined />}
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         <SkillCard
           title="Creative Solutions"
           description="I like to create creative solutions to problems and challenges"
           icon={<TipsAndUpdatesOutlined />}
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         <SkillCard
           title="Love programming"
           description="I love to see what I write turn into solutions to real problems. "
