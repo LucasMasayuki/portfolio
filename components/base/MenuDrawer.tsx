@@ -61,7 +61,7 @@ const MenuDrawer: React.FC<Props> = ({ open, handleClose }) => {
         </Container>
       </AppBar>
       <Toolbar />
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" mt={4}>
         <Grid item xs={12} justifyContent="center" display="inline-flex">
           <PhotoAvatar
             name="test"
@@ -80,7 +80,14 @@ const MenuDrawer: React.FC<Props> = ({ open, handleClose }) => {
             Full stack web developer
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          mt={4}
+          justifyContent="center"
+          display="inline-flex"
+          mb={4}
+        >
           <Tabs
             orientation="vertical"
             value={value}

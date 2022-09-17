@@ -122,7 +122,33 @@ const ExperienceSection: React.FC = () => {
         <Card sx={{ height: '100%' }}>
           <CardContent sx={{ p: 2 }}>
             <Grid container alignItems="center">
-              <Grid item xs={8}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                textAlign="center"
+                mb={{ xs: 4, md: 0 }}
+                display={{ xs: 'block', md: 'none' }}
+              >
+                <Box
+                  height={256}
+                  width="100%"
+                  position="relative"
+                  sx={{ borderRadius: 20 }}
+                >
+                  <Image src="/petzillas.png" alt="petzillas" layout="fill" />
+                </Box>
+                <br />
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    onClickGoTo('https://petzillas.com.br/');
+                  }}
+                >
+                  Go to Petzillas
+                </Button>
+              </Grid>
+              <Grid item xs={12} display={{ xs: 'block', md: 'none' }}>
                 <Typography variant="h4" fontWeight="bold">
                   Freelancer full stack web developer
                 </Typography>
@@ -168,7 +194,59 @@ const ExperienceSection: React.FC = () => {
                   </Typography>{' '}
                 </Typography>
               </Grid>
-              <Grid item xs={4} textAlign="center">
+              <Grid item xs={12} md={8} display={{ xs: 'none', md: 'flex' }}>
+                <Typography variant="h4" fontWeight="bold">
+                  Freelancer full stack web developer
+                </Typography>
+                <Typography variant="h6" fontWeight="lighter">
+                  Petzillas
+                </Typography>
+                <Typography variant="h6" fontWeight="lighter">
+                  ago/2021 - ago/2022
+                </Typography>
+                <br />
+                <Typography variant="h6" fontWeight="lighter">
+                  Application to help take care of the pet and help pet
+                  professionals to manage their business through a web system
+                </Typography>
+                <Typography variant="h6" fontWeight="lighter">
+                  I was Construction of an ERP from scratch, to assist in the
+                  management of pet shops, integrated with an Android/Ios
+                  application, along the lines of a pet products marketplace
+                </Typography>
+                <Typography variant="h6" fontWeight="lighter">
+                  The Erp was built using{' '}
+                  <Typography component="span" variant="h6" fontWeight="bold">
+                    typescript
+                  </Typography>{' '}
+                  as the primary language, using{' '}
+                  <Typography component="span" variant="h6" fontWeight="bold">
+                    node (Express)
+                  </Typography>{' '}
+                  on the backend and{' '}
+                  <Typography component="span" variant="h6" fontWeight="bold">
+                    React.js
+                  </Typography>{' '}
+                  on the frontend, as main tools and frameworks. In addition, I
+                  built every part of the {"application's"} graphical interface
+                  using material ui library, with the best UI and UX practices.
+                  I used{' '}
+                  <Typography component="span" variant="h6" fontWeight="bold">
+                    Typeorm
+                  </Typography>{' '}
+                  as ORM, to work on top of a database in{' '}
+                  <Typography component="span" variant="h6" fontWeight="bold">
+                    SQL Server
+                  </Typography>{' '}
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                textAlign="center"
+                display={{ xs: 'none', md: 'flex' }}
+              >
                 <Box
                   height={256}
                   width="100%"
