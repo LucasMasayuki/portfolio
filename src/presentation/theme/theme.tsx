@@ -181,7 +181,7 @@ const appTheme = (mode: ColorModes): Theme =>
         MuiGrid: {
           styleOverrides: {
             item: {
-              padding: { xs: 2, md: 9 },
+              p: { xs: 2, md: 9 },
             },
           },
         },
