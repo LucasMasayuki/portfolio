@@ -194,7 +194,7 @@ const ExperienceSection: React.FC = () => {
                   </Typography>{' '}
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={8} display={{ xs: 'none', md: 'flex' }}>
+              <Grid item xs={12} md={8} display={{ xs: 'none', md: 'block' }}>
                 <Typography variant="h4" fontWeight="bold">
                   Freelancer full stack web developer
                 </Typography>
@@ -245,7 +245,7 @@ const ExperienceSection: React.FC = () => {
                 xs={12}
                 md={4}
                 textAlign="center"
-                display={{ xs: 'none', md: 'flex' }}
+                display={{ xs: 'none', md: 'block' }}
               >
                 <Box
                   height={256}
