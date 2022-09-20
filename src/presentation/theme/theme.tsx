@@ -180,6 +180,9 @@ const appTheme = (mode: ColorModes): Theme =>
         },
         MuiGrid: {
           styleOverrides: {
+            container: {
+              padding: 32,
+            },
             item: {
               padding: 6,
             },

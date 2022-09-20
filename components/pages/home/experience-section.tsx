@@ -15,12 +15,7 @@ const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <Grid
-      container
-      sx={{ p: 8, height: '100%' }}
-      gap={4}
-      id="experiencce-section"
-    >
+    <Grid container sx={{ height: '100%' }} gap={4} id="experience-section">
       <Grid item xs={12}>
         <Typography variant="h2" fontWeight="bold">
           Experience

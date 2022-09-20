@@ -11,6 +11,8 @@ const LinkTab: React.FC<Props> = ({ label, href }) => {
       component="a"
       onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
+
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
       }}
       label={label}
       href={href}

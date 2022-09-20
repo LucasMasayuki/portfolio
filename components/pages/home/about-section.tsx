@@ -11,7 +11,7 @@ import SkillSetCard from './skill-set-card';
 
 const AboutSection: React.FC = () => {
   return (
-    <Grid container sx={{ p: 8, height: '100%' }} id="about-section">
+    <Grid container sx={{ height: '100%' }} id="about-section">
       <Grid item xs={12}>
         <Typography variant="h2" fontWeight="bold">
           About me
