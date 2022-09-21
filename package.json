@@ -16,14 +16,17 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.4",
+    "formik": "^2.2.9",
     "next": "12.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "typewriter-effect": "^2.19.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@mui/lab": "^5.0.0-alpha.98",
+    "@mui/lab": "^5.0.0-alpha.100",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/react": "^13.4.0",
     "@types/faker": "5.5.9",
@@ -32,6 +35,7 @@
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@types/react-icons": "^3.0.0",
+    "@types/yup": "^0.32.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^2.1.0",

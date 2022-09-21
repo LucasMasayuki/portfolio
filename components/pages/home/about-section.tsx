@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
         sx={{ display: 'inline-grid' }}
       >
         <PhotoAvatar
-          name="test"
+          name="lucas"
           height={{
             xs: 128,
             md: 164,

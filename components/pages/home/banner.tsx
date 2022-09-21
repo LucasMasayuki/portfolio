@@ -1,9 +1,13 @@
-import { Grid, Typography } from '@mui/material';
-import React from 'react';
+import { Grid } from '@mui/material';
+import React, { useState } from 'react';
+import Typewriter from 'typewriter-effect';
 
 import Style from '../../../styles/banner.module.css';
+import LaptopView from './laptop-view';
 
 const Banner: React.FC = () => {
+  const [isFinishWriting, setIsFinishWriting] = useState(false);
+
   return (
     <Grid
       container
@@ -11,49 +15,53 @@ const Banner: React.FC = () => {
       sx={{ p: 8, height: 'inherit' }}
       id="home-section"
     >
-      <Grid item xs={12} md={7}>
-        <Typography
-          className={`${Style['seamless-animated-text']}`}
-          variant="h2"
-          fontWeight="bold"
-        >
-          Hi,
-        </Typography>
-        <Typography
-          className={Style['seamless-animated-text']}
-          variant="h2"
-          fontWeight="bold"
-        >
-          {"I'm Lucas"}
-        </Typography>
-        <Typography
-          className={Style['seamless-animated-text']}
-          variant="h2"
-          fontWeight="bold"
-        >
-          Web developer
-        </Typography>
-      </Grid>
+      <Grid item xs={0} md={2} />
       <Grid
         item
         xs={12}
-        md={5}
+        md={8}
         sx={{ position: 'relative' }}
         justifySelf="center"
       >
         <div className={Style['laptop']}>
           <div className={Style['laptop-frame']}>
             <div className={Style['laptop-content']}>
-              <iframe
-                title="blog"
-                src="https://devmon.vercel.app/"
-                style={{ width: '100%', border: 'none', height: '100%' }}
-              />
+              {!isFinishWriting ? (
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .changeDelay(1)
+                      .typeString('PORTFOLIO:~$')
+                      .changeDelay(200)
+                      .typeString('  Hi! <br/>')
+                      .changeDelay(1)
+                      .typeString('PORTFOLIO:~$')
+                      .changeDelay(200)
+                      .typeString("  I'm Lucas <br/>")
+                      .changeDelay(1)
+                      .typeString('PORTFOLIO:~$')
+                      .changeDelay(200)
+                      .typeString('  Full stack web developer <br/>')
+                      .typeString('initializing')
+                      .changeDelay(200)
+                      .typeString('.')
+                      .typeString('.')
+                      .typeString('.')
+                      .callFunction(() => {
+                        setIsFinishWriting(true);
+                      })
+                      .start();
+                  }}
+                />
+              ) : (
+                <LaptopView />
+              )}
             </div>
           </div>
           <div className={Style['laptop-body']} />
         </div>
       </Grid>
+      <Grid item xs={0} md={2} />
     </Grid>
   );
 };

@@ -80,14 +80,7 @@ const MenuDrawer: React.FC<Props> = ({ open, handleClose }) => {
             Full stack web developer
           </Typography>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          mt={4}
-          justifyContent="center"
-          display="inline-flex"
-          mb={4}
-        >
+        <Grid item xs={12} mt={4} justifyContent="center" mb={4}>
           <Tabs
             orientation="vertical"
             value={value}

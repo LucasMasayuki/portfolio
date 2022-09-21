@@ -70,6 +70,12 @@ const Header: React.FC = () => {
             <LinkTab label="About" href="#about-section" />
             <LinkTab label="Experience" href="#experience-section" />
             <LinkTab label="Side projects" href="#side-projects-section" />
+            <LinkTab label="Contact me" href="#contact-section" />
+            <LinkTab
+              scrollTo={false}
+              label="Blog"
+              href="https://devmon.vercel.app/en-US"
+            />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />
           <Box
