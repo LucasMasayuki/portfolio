@@ -12,7 +12,6 @@ import {
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 
-import 'highlight.js/styles/atom-one-dark-reasonable.css';
 import Image from 'next/image';
 
 type Props = {

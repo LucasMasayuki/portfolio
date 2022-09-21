@@ -7,7 +7,6 @@ import {
   useTheme,
 } from '@mui/material';
 
-import 'highlight.js/styles/atom-one-dark-reasonable.css';
 import React from 'react';
 
 type Props = {
