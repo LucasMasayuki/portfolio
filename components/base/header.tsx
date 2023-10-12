@@ -15,8 +15,8 @@ import {
   toogleColorMode,
 } from '../../src/presentation/stores/color-mode-slice';
 import { ColorModes } from '../../src/utils/constants';
-import LinkTab from './link-tab';
 import MenuDrawer from './MenuDrawer';
+import LinkTab from './link-tab';
 import SocialMediaIcon from './social-media-icon';
 import GithubIconSvg from './svgs/github-icon-svg';
 import LinkedinIconSvg from './svgs/linkedin-icon-svg';
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
             <LinkTab
               scrollTo={false}
               label="Blog"
-              href="https://devmon.vercel.app/en-US"
+              href="https://burnoutdev.com/"
             />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />

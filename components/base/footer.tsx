@@ -1,6 +1,5 @@
-import { Box, Paper, Toolbar, Typography } from '@mui/material';
+import { Paper, Toolbar } from '@mui/material';
 import React from 'react';
-import { SiNextdotjs } from 'react-icons/si';
 import styles from '../../styles/footer.module.css';
 import SocialMediaIcon from './social-media-icon';
 import GithubIconSvg from './svgs/github-icon-svg';
@@ -23,11 +22,6 @@ const Footer: React.FC = () => {
           >
             <LinkedinIconSvg />
           </SocialMediaIcon>
-          <Box component="div" sx={{ flexGrow: 1 }} />
-
-          <Typography>
-            made with <SiNextdotjs />
-          </Typography>
         </Toolbar>
       </Paper>
     </footer>

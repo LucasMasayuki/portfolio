@@ -12,7 +12,13 @@ const Banner: React.FC = () => {
     <Grid
       container
       alignItems="center"
-      sx={{ p: 8, height: 'inherit' }}
+      sx={{
+        p: 8,
+        height: 'inherit',
+        '@media (max-width: 600px)': {
+          p: 1,
+        },
+      }}
       id="home-section"
     >
       <Grid item xs={0} md={2} />
@@ -32,18 +38,18 @@ const Banner: React.FC = () => {
                     typewriter
                       .changeDelay(1)
                       .typeString('PORTFOLIO:~$')
-                      .changeDelay(200)
+                      .changeDelay(50)
                       .typeString('  Hi! <br/>')
                       .changeDelay(1)
                       .typeString('PORTFOLIO:~$')
-                      .changeDelay(200)
+                      .changeDelay(50)
                       .typeString("  I'm Lucas <br/>")
                       .changeDelay(1)
                       .typeString('PORTFOLIO:~$')
-                      .changeDelay(200)
+                      .changeDelay(50)
                       .typeString('  Full stack web developer <br/>')
                       .typeString('initializing')
-                      .changeDelay(200)
+                      .changeDelay(50)
                       .typeString('.')
                       .typeString('.')
                       .typeString('.')

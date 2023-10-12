@@ -17,7 +17,7 @@ import Image from 'next/image';
 type Props = {
   title: string;
   description: string;
-  githubLink: string;
+  githubLink?: string;
   demoLink: string;
   imgLink: string;
   imgAlt: string;
@@ -79,13 +79,11 @@ const SideProjectInfoCard: React.FC<Props> = ({
               >
                 Demo
               </Button>
-              <IconButton>
-                <FaGithub
-                  onClick={() => {
-                    window.open(githubLink, '_blank');
-                  }}
-                />
-              </IconButton>
+              {githubLink ? (
+                <IconButton onClick={() => window.open(githubLink, '_blank')}>
+                  <FaGithub />
+                </IconButton>
+              ) : null}
             </Grid>
           </Grid>
         </CardContent>

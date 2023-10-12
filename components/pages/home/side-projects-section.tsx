@@ -1,6 +1,13 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
-import { SiJavascript, SiNextdotjs, SiReact, SiSolidity } from 'react-icons/si';
+import {
+  SiJavascript,
+  SiNextdotjs,
+  SiReact,
+  SiSolidity,
+  SiSvelte,
+  SiTypescript,
+} from 'react-icons/si';
 import SideProjectInfoCard from '../../base/side-project-info-card';
 
 const SideProjectSection: React.FC = () => {
@@ -58,6 +65,24 @@ const SideProjectSection: React.FC = () => {
               <SiReact />
               <Box mr={2} display="inline-block" />
               <SiSolidity />
+            </>
+          }
+        />
+      </Grid>
+      <Grid item xs={12}>
+        <SideProjectInfoCard
+          title="Burnout"
+          description="Burnout is my personal blog, where I share my experiences and insights based on my career and studies in the field of software development and technology."
+          imgLink="/burnout.png"
+          imgAlt="burnout blog"
+          demoLink="https://burnoutdev.com/"
+          whatIUse={
+            <>
+              <SiJavascript />
+              <Box mr={2} display="inline-block" />
+              <SiSvelte />
+              <Box mr={2} display="inline-block" />
+              <SiTypescript />
             </>
           }
         />

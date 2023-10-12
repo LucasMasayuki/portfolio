@@ -10,16 +10,16 @@ const LaptopView: React.FC = () => {
       className={Style['laptop-view']}
     >
       <Grid container>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3}>
           <Link download href="/Curriculum.pdf" target="_blank">
             <FaFilePdf />
-            <Typography>resume.pdf</Typography>
+            <Typography fontWeight={'bold'}>resume.pdf</Typography>
           </Link>
         </Grid>
-        <Grid item xs={3}>
-          <Link download href="https://devmon.vercel.app/en-US" target="_blank">
+        <Grid item xs={12} md={3}>
+          <Link download href="https://burnoutdev.com/" target="_blank">
             <FaChrome />
-            <Typography>blog.html</Typography>
+            <Typography fontWeight={'bold'}>blog.html</Typography>
           </Link>
         </Grid>
       </Grid>
