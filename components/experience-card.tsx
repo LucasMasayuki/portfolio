@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Card,
-  Grid,
   IconButton,
   Typography,
   useMediaQuery,
@@ -15,19 +14,19 @@ import Image from 'next/image';
 
 type Props = {
   title: string;
-  description: string;
   githubLink?: string;
-  demoLink: string;
+  link: string;
   imgLink: string;
   imgAlt: string;
+  description: React.ReactElement;
   whatIUse: React.ReactElement;
 };
 
-const SideProjectInfoCard: React.FC<Props> = ({
+const ExperienceCard: React.FC<Props> = ({
   title,
   description,
   githubLink,
-  demoLink,
+  link,
   imgLink,
   imgAlt,
   whatIUse,
@@ -66,29 +65,25 @@ const SideProjectInfoCard: React.FC<Props> = ({
           display="flex"
           flexDirection="column"
         >
-          <Grid container sx={{ p: 0 }} gap={4}>
+          <Box
+            sx={{ display: 'flex', flexDirection: 'column', p: 0 }}
+            gap={4}
+            flex={1}
+          >
             <Typography variant="h3" fontWeight="bold">
               {title}
             </Typography>
-            <Grid
-              item
-              xs={12}
-              sx={{
-                p: 0,
-              }}
-            >
-              <Typography variant="body1">{description}</Typography>
-            </Grid>
-          </Grid>
+            <Box sx={{ overflow: 'auto' }}>{description}</Box>
+          </Box>
           <Box sx={{ p: 0 }}>
             <Button
               variant="contained"
               size="large"
               onClick={() => {
-                window.open(demoLink, '_blank');
+                window.open(link, '_blank');
               }}
             >
-              Demo
+              Acessar
             </Button>
             {githubLink ? (
               <IconButton
@@ -120,7 +115,6 @@ const SideProjectInfoCard: React.FC<Props> = ({
           <Image src={imgLink} alt={imgAlt} layout="fill" />
         </Box>
         <br />
-
         <Box
           sx={{
             display: 'flex',
@@ -138,4 +132,4 @@ const SideProjectInfoCard: React.FC<Props> = ({
   );
 };
 
-export default SideProjectInfoCard;
+export default ExperienceCard;

@@ -14,6 +14,7 @@ const SideProjectSection: React.FC = () => {
   return (
     <Grid
       container
+      gap={4}
       sx={{ height: '100%' }}
       id="side-projects-section"
       position="relative"
@@ -23,7 +24,7 @@ const SideProjectSection: React.FC = () => {
           Side projects
         </Typography>
       </Grid>
-      <Grid item xs={12} mb={4}>
+      <Grid item xs={12}>
         <SideProjectInfoCard
           title="Kuma world"
           description="Kuma world was an nft project that aimed to make interactive

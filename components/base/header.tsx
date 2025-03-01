@@ -1,12 +1,5 @@
 import { Brightness4, Brightness7, MenuOutlined } from '@mui/icons-material';
-import {
-  AppBar,
-  Box,
-  Container,
-  IconButton,
-  Tabs,
-  Toolbar,
-} from '@mui/material';
+import { AppBar, Box, IconButton, Tabs, Toolbar } from '@mui/material';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../src/presentation/app/hooks';
@@ -41,7 +34,7 @@ const Header: React.FC = () => {
         alignContent: 'center',
       }}
     >
-      <Container maxWidth="xl">
+      <Box sx={{ pt: 2, pb: 2, pr: 3, pl: 3 }}>
         <Toolbar disableGutters>
           <IconButton
             sx={{ display: { xs: 'block', md: 'none' } }}
@@ -78,39 +71,42 @@ const Header: React.FC = () => {
             />
           </Tabs>
           <Box component="div" sx={{ flexGrow: 1 }} />
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'block' },
-            }}
-          >
-            <SocialMediaIcon
-              socialMediaName="github"
-              href="https://github.com/LucasMasayuki"
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Box
+              sx={{
+                display: { xs: 'none', md: 'block' },
+              }}
             >
-              <GithubIconSvg />
-            </SocialMediaIcon>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'block' },
-            }}
-          >
-            <SocialMediaIcon
-              socialMediaName="linkedin"
-              href="https://github.com/LucasMasayuki"
+              <SocialMediaIcon
+                socialMediaName="github"
+                href="https://github.com/LucasMasayuki"
+              >
+                <GithubIconSvg />
+              </SocialMediaIcon>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: 'none', md: 'block' },
+              }}
             >
-              <LinkedinIconSvg />
-            </SocialMediaIcon>
-          </Box>
+              <SocialMediaIcon
+                socialMediaName="linkedin"
+                href="https://github.com/LucasMasayuki"
+              >
+                <LinkedinIconSvg />
+              </SocialMediaIcon>
+            </Box>
 
-          <IconButton
-            sx={{ ml: 1 }}
-            onClick={() => dispatch(toogleColorMode(null))}
-          >
-            {colorMode === ColorModes.DARK ? <Brightness7 /> : <Brightness4 />}
-          </IconButton>
+            <IconButton onClick={() => dispatch(toogleColorMode(null))}>
+              {colorMode === ColorModes.DARK ? (
+                <Brightness7 />
+              ) : (
+                <Brightness4 />
+              )}
+            </IconButton>
+          </Box>
         </Toolbar>
-      </Container>
+      </Box>
     </AppBar>
   );
 };
