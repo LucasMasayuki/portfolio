@@ -118,7 +118,7 @@ const ExperienceCard: React.FC<Props> = ({
         <Box
           sx={{
             display: 'flex',
-            gap: 1,
+            gap: 3,
             alignItems: 'center',
             justifyContent: 'end',
             pl: 2,

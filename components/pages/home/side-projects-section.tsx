@@ -20,6 +20,24 @@ const SideProjectSection: React.FC = () => {
       position="relative"
     >
       <Grid item xs={12}>
+        <SideProjectInfoCard
+          title="Burnout"
+          description="Burnout is my personal blog, where I share my experiences and insights based on my career and studies in the field of software development and technology."
+          imgLink="/burnout.png"
+          imgAlt="burnout blog"
+          demoLink="https://burnoutdev.com/"
+          whatIUse={
+            <>
+              <SiJavascript />
+              <Box mr={2} display="inline-block" />
+              <SiSvelte />
+              <Box mr={2} display="inline-block" />
+              <SiTypescript />
+            </>
+          }
+        />
+      </Grid>
+      <Grid item xs={12}>
         <Typography variant="h2" fontWeight="bold">
           Side projects
         </Typography>
@@ -66,24 +84,6 @@ const SideProjectSection: React.FC = () => {
               <SiReact />
               <Box mr={2} display="inline-block" />
               <SiSolidity />
-            </>
-          }
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <SideProjectInfoCard
-          title="Burnout"
-          description="Burnout is my personal blog, where I share my experiences and insights based on my career and studies in the field of software development and technology."
-          imgLink="/burnout.png"
-          imgAlt="burnout blog"
-          demoLink="https://burnoutdev.com/"
-          whatIUse={
-            <>
-              <SiJavascript />
-              <Box mr={2} display="inline-block" />
-              <SiSvelte />
-              <Box mr={2} display="inline-block" />
-              <SiTypescript />
             </>
           }
         />

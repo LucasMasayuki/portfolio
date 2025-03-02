@@ -257,6 +257,42 @@ const SkillSetCard: React.FC = () => {
               p={0}
             >
               <Grid item xs={2}>
+                <SiNuxtdotjs size={32} />
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="subtitle1">Nuxt js</Typography>
+                <Rating value={5} readOnly />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Grid
+              container
+              item
+              xs={12}
+              alignItems="center"
+              textAlign="start"
+              p={0}
+            >
+              <Grid item xs={2}>
+                <FaVuejs size={32} />
+              </Grid>
+              <Grid item xs={10}>
+                <Typography variant="subtitle1">Vue.js</Typography>
+                <Rating value={5} readOnly />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Grid
+              container
+              item
+              xs={12}
+              alignItems="center"
+              textAlign="start"
+              p={0}
+            >
+              <Grid item xs={2}>
                 <SiFlutter size={32} />
               </Grid>
               <Grid item xs={10}>
@@ -279,42 +315,6 @@ const SkillSetCard: React.FC = () => {
               </Grid>
               <Grid item xs={10}>
                 <Typography variant="subtitle1">Dart</Typography>
-                <Rating value={4} readOnly />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Grid
-              container
-              item
-              xs={12}
-              alignItems="center"
-              textAlign="start"
-              p={0}
-            >
-              <Grid item xs={2}>
-                <SiNuxtdotjs size={32} />
-              </Grid>
-              <Grid item xs={10}>
-                <Typography variant="subtitle1">Nuxt js</Typography>
-                <Rating value={4} readOnly />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Grid
-              container
-              item
-              xs={12}
-              alignItems="center"
-              textAlign="start"
-              p={0}
-            >
-              <Grid item xs={2}>
-                <FaVuejs size={32} />
-              </Grid>
-              <Grid item xs={10}>
-                <Typography variant="subtitle1">Vue.js</Typography>
                 <Rating value={4} readOnly />
               </Grid>
             </Grid>

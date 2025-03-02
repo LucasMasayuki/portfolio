@@ -41,16 +41,17 @@ const AboutSection: React.FC = () => {
       </Grid>
       <Grid item xs={12} md={8} textAlign="center" pb={8} pt={8}>
         <Typography variant="subtitle1">
-          {"I've "}
-          been working with web/mobile full stack development since 2017, where
-          I currently impact about 5 millions users within 5000
-          stores/restaurants with my work, mainly because I am primarily
-          responsible for the current integration with online payment. I value
-          the constant and gradual improvement, in order to be able to
-          positively affect both the product team in which I am inserted, and
-          for the customers who will use the application. In my spare time I
-          have invested time in learning to build applications within web3
-          environments, mainly on the ETH network
+          I have been working as a full stack web/mobile developer for over 7
+          years, currently impacting around 5 million users across 10000
+          stores/restaurants with my work. I have been part of growing startups,
+          where I worked on both smaller and larger projects, including those
+          with a significant impact on the core operations, such as being
+          responsible for the integration process with online payment methods
+          and building and managing a suscription hub from scratch. Throughout
+          my journey, I have used various languages and tools, with my core
+          expertise being in TypeScript, PHP, and SQL, along with frameworks
+          like Laravel, Vue, React, and Express. I also have some experience
+          with Flutter.
         </Typography>
       </Grid>
       <Grid item xs={12} md={4}>
