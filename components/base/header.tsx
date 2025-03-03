@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         alignContent: 'center',
       }}
     >
-      <Box sx={{ pt: 2, pb: 2, pr: 3, pl: 3 }}>
+      <Box sx={{ pt: 1, pb: 1, pr: 3, pl: 3 }}>
         <Toolbar disableGutters>
           <IconButton
             sx={{ display: { xs: 'block', md: 'none' } }}

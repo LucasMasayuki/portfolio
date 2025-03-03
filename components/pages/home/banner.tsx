@@ -21,11 +21,11 @@ const Banner: React.FC = () => {
       }}
       id="home-section"
     >
-      <Grid item xs={0} md={2} />
+      <Grid item xs={0} md={3} />
       <Grid
         item
         xs={12}
-        md={8}
+        md={6}
         sx={{ position: 'relative' }}
         justifySelf="center"
       >
@@ -67,7 +67,7 @@ const Banner: React.FC = () => {
           <div className={Style['laptop-body']} />
         </div>
       </Grid>
-      <Grid item xs={0} md={2} />
+      <Grid item xs={0} md={3} />
     </Grid>
   );
 };
